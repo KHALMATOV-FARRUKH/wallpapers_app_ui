@@ -29,6 +29,9 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                     InkWell(
+                      onTap: (){
+                        Navigator.pushNamed(context, "favPage");
+                      },
                       child: Icon(
                         Icons.favorite,
                         size: 30,
@@ -70,18 +73,16 @@ class HomePage extends StatelessWidget {
                 ],
               ),
               Flexible(
-                child: Flexible(
-                  flex: 1,
-                  child: TabBarView(
-                    children: [
-                     ImagesWidget(),
-                     ImagesWidget(),
-                     ImagesWidget(),
-                     ImagesWidget(),
-                     ImagesWidget(),
-                     ImagesWidget(),
-                    ],
-                  ),
+                flex: 1,
+                child: TabBarView(
+                  children: [
+                   ImagesWidget(),
+                   ImagesWidget(),
+                   ImagesWidget(),
+                   ImagesWidget(),
+                   ImagesWidget(),
+                   ImagesWidget(),
+                  ],
                 ),
               ),
             ],

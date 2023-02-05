@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:wallpapers_app_ui/pages/FavPage.dart';
 import 'package:wallpapers_app_ui/pages/HomePage.dart';
+import 'package:wallpapers_app_ui/pages/ImagePage.dart';
 
 void main() {
   runApp(MyApp());
@@ -29,6 +31,8 @@ class _MyAppState extends State<MyApp>{
       debugShowCheckedModeBanner: false,
       routes: {
         "/": (context) => HomePage(),
+        "ImagePage": (context) => ImagePage(),
+        "favPage": (context) => FavPage(),
       },
     );
   }

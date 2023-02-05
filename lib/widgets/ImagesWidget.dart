@@ -1,5 +1,7 @@
+import 'package:dismissible_page/dismissible_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:wallpapers_app_ui/pages/ImagePage.dart';
 
 class ImagesWidget extends StatelessWidget {
   const ImagesWidget({Key? key}) : super(key: key);
@@ -15,9 +17,11 @@ class ImagesWidget extends StatelessWidget {
         crossAxisSpacing: 10,
         childAspectRatio: 0.8,
         children: [
-          for (int i = 1; i < 8; i++)
+          for (int i = 1; i < 9; i++)
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                context.pushTransparentRoute(ImagePage());
+              },
               child: Container(
                 decoration: BoxDecoration(
                   color: Colors.grey,
@@ -26,9 +30,9 @@ class ImagesWidget extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10),
                   child: Hero(
-                    tag: 1,
+                    tag: "$i",
                     child: Image.asset(
-                      "images/1.jpg",
+                      "images/$i.jpg",
                       fit: BoxFit.cover,
                     ),
                   ),
